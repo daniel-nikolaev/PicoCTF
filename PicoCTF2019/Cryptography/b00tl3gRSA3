@@ -1,0 +1,37 @@
+from pwn import *
+from egcd import egcd
+from Crypto.Util.number import *
+import sympy
+
+def  totient (n):
+    factors = sympy.factorint(n)
+    rst = 1
+    for i,j in factors.items():
+        rst *= (pow(i,j) - pow(i,j-1))
+    return rst
+
+def main():
+    con = remote("jupiter.challenges.picoctf.org", <your port>)
+    con.readuntil(": ")
+    c = int(con.readuntil("\n"))
+    con.readuntil(": ")
+    n = int(con.readuntil("\n"))
+    con.readuntil(": ")
+    e = int(con.readuntil("\n"))
+
+    log.info("c = {}".format(c))
+    log.info("n = {}".format(n))
+    log.info("e = {}".format(e))
+
+    phi = totient(n)
+    d = egcd(e, phi)[1]
+    if d < 0:
+        d += phi	
+    log.info("d = {}".format(d))
+
+    m = pow(c, d, n)
+    log.info("De	crypted m = {}".format(m))
+    log.info("FLAG is {}".format(long_to_bytes(m)))
+
+if __name__ == "__main__":
+    main()
