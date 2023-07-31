@@ -1,5 +1,8 @@
+#ASM 3
+Reverse Engineering, 300 points
+
 Contents of test.S:
-```
+```assembly
 .intel_syntax noprefix
 .global asm3
 
@@ -17,7 +20,7 @@ asm3:
 	ret    
 ```
 Contents of main.c:
-```
+```assembly
 #include <stdio.h>
 
 int asm3(int, int, int);
@@ -29,16 +32,16 @@ int main(int argc, char* argv[])
 }
 ```
 Compiling and running:
-```
+```assembly
 # gcc -masm=intel -m32 -c test.S -o test.o
 ```
-```
+```assembly
 # gcc -m32 -c main.c -o main.o
 ```
-```
+```assembly
 # gcc -m32 test.o main.o -o main
 ```
-```
+```assembly
 # ./main
 ```
 
