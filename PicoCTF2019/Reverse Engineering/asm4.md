@@ -1,7 +1,7 @@
 # asm 3
 ## Reverse Engineering, 300 points
 
-Contents of test.S:
+Contents of solution.c:
 ```assembly
 #include <stdio.h>
 #include <stdlib.h>
