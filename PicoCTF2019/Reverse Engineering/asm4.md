@@ -1,5 +1,5 @@
-# asm 3
-## Reverse Engineering, 300 points
+# asm 4
+## Reverse Engineering, 400 points
 
 Contents of solution.c:
 ```assembly
