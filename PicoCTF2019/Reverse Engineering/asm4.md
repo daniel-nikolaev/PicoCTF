@@ -87,7 +87,7 @@ int asm4(char* in)
 
 int main(int argc, char** argv)
 {
-    printf("0x%x\n", asm4("picoCTF_724a2"));
+    printf("0x%x\n", asm4("CHANGE TO WHAT THE ORIGINAL CHALLENGE DESCRIPTION GIVES YOU"));
     
     return 0;
 }
